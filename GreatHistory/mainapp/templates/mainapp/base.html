@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page_title|default:"GreatHistory"|capfirst }}</title>
+    {% block css %}
+    {% endblock %}
+    {% block js %}
+    {% endblock %}
+
+</head>
+<body>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
