@@ -1,0 +1,25 @@
+version: '3.2'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    expose:
+      - 8080
+    command: bash -c " python manage.py makemigrations && python manage.py migrate && gunicorn GreatHistory.wsgi -b 0.0.0.0:8080 "
+
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - 8001:80
+    depends_on:
+      - backend
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - 85:80
+    depends_on:
+      - nginx
