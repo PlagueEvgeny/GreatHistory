@@ -1,6 +1,7 @@
-from django.urls import path
+from django.urls import path, include
 import authapp.views as authapp
-
+from rest_framework.routers import DefaultRouter
+router = DefaultRouter()
 app_name = 'authapp'
 
 urlpatterns = [
