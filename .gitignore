@@ -1,0 +1,4 @@
+/GreatHistory/db.sqlite3
+/.gitignore
+/GreatHistory/_frontapp/
+/GreatHistory/_frontapp/src/components/CategoryList.js
