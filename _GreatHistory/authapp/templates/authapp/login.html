@@ -1,0 +1,17 @@
+{% extends 'mainapp/base.html' %}
+<title>{{ page_title|capfirst }}</title>
+{% block content %}
+<h1 style="text-align: center">Авторизация</h1>
+<div class="login-page">
+    <div class="form">
+        <form method="post" class="login-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br>
+            <input class="buton" type="submit" value="Войти">
+            <p><a href="{% url 'auth:register' %}">Зарегистрироваться</a></p>
+        </form>
+    </div>
+
+</div>
+{% endblock %}
